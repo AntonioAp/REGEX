@@ -19,6 +19,17 @@ document.getElementById("formulario").addEventListener('submit',function(event){
     
 })
 
+/*Que empiece por una letra o número
+Que tenga entre 6 y 20 caracteres
+Que se pueda poner alguno de estos símbolos, o varios: !,@,#,$,%,&
+Que haga una búsqueda global en toda la cadena Para la implementación de validar la contraseña, vamos a crear la función checkPassword. Esta función será la que ejecute la expresión regular. Se le pasará como argumento el valor de la contraseña recogida*/
+//VALIDACIÓN PASSWORD
+
+function checkPassword(password){
+    let regex_2 = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,20}$/;
+    return regex_2.test(password)
+}
+
 function checkRace(raceOrNot){
     let regex = /^elfo$|^humano$|^hobbit$|^enano$/;
     return regex.test(raceOrNot);
@@ -29,3 +40,5 @@ function checkMail(email){
     let regex_1 = /^[A-Za-z0-9._-]+@([A-Za-z0-9._-])+\.[A-Za-z]{2,4}$/;
     return regex_1.test(email);
 }
+
+
