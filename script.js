@@ -12,17 +12,20 @@ document.getElementById("formulario").addEventListener('submit',function(event){
     let mail = document.getElementById('mail').value;
     let password = document.getElementById('password').value;
     let raceOrNot = document.getElementById('raza').value;
-    console.log(mail)
-    console.log(raceOrNot)
-    console.log(password)
     console.log(checkMail(mail));
     console.log(checkPassword(password));
     console.log(checkRace(raceOrNot));
 
+    
 })
+
+function checkRace(raceOrNot){
+    let regex = /^elfo$|^humano$|^hobbit$|^enano$/;
+    return regex.test(raceOrNot);
+}
+
 //VALIDACIÓN EMAIL
 function checkMail(email){
-    /* let regex_1 = /^[A-Za-z0-9._-]+@[A-Za-z0-9.-]{1, }+\.[A-Za-z]{2,4}$/; */
     let regex_1 = /^[A-Za-z0-9._-]+@([A-Za-z0-9._-])+\.[A-Za-z]{2,4}$/;
     return regex_1.test(email);
 }
