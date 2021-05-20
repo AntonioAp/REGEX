@@ -12,9 +12,9 @@ document.getElementById("formulario").addEventListener('submit',function(event){
     let mail = document.getElementById('mail').value;
     let password = document.getElementById('password').value;
     let raceOrNot = document.getElementById('raza').value;
-    console.log(checkMail(mail));
-    console.log(checkPassword(password));
-    console.log(checkRace(raceOrNot));
+    console.log(`Correo: ${checkMail(mail)}`);
+    console.log(`Password: ${checkPassword(password)}`);
+    console.log(`Raza: ${checkRace(raceOrNot)}`);
 
     
 })
